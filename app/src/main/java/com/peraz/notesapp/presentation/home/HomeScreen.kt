@@ -86,6 +86,7 @@ fun HomeScreen(
     ) { innerPadding ->
         LazyColumn(modifier = Modifier
             .padding(innerPadding)
+            .fillMaxSize()
             .background(Color.LightGray)) {
             items(notes.size){
                 index->

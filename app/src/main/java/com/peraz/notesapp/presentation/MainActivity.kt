@@ -6,11 +6,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.material3.MaterialTheme
 import com.peraz.notesapp.presentation.addnote.AddNoteScreen
 import com.peraz.notesapp.presentation.home.HomeScreen
 import com.peraz.notesapp.presentation.theme.NotesAppTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable

@@ -98,7 +98,7 @@ class AddNoteViewModel @Inject constructor(
         _showConfirmationDialog.value=true
     }
 
-    fun deleteNote()= viewModelScope.launch{
+    fun deleteNote()= viewModelScope.launch(Dispatchers.IO){
         val itemId= _noteId
         notesRepository.delete(itemId)
         hideConfirmationDialog()

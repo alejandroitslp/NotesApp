@@ -1,5 +1,7 @@
 package com.peraz.notesapp.presentation.home
 
+import com.peraz.notesapp.data.local.NoteEntity
+
 data class Notes(val id: Int, val title: String, val desc: String)
 
 
@@ -177,3 +179,10 @@ var _notesList = mutableListOf<Notes>(
 //    Notes(43,"Out of scope", "List of things that are outside of the project scope."),
 )
 
+fun Notes.toEntity(): NoteEntity{
+    return NoteEntity(
+        id=if (this.id != -1) this.id else null,
+        title=this.title,
+        description = this.desc
+    )
+}

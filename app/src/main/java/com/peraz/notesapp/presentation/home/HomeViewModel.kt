@@ -45,8 +45,11 @@ class HomeViewModel @Inject constructor(
     init {
         val TAG="HomeViewModel"
         Log.d(TAG,"${notesRepository.hashCode()}")
-        val items=notesRepository.getAll()
-        notes.addAll(items)
+        viewModelScope.launch(Dispatchers.IO) {
+            val items=notesRepository.getAll()
+            notes.addAll(items)
+        }
+
 
         viewModelScope.launch {
             notesRepository.deleteNoteListener.collect { deletedNoteId->
